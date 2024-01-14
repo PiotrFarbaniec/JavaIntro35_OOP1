@@ -1,9 +1,9 @@
 package org.OOP1;
 
 public class Cinema {
-    private int seatNumber;
-    private String rowNumber;
-    private boolean isAvailable = true;
+    private final int seatNumber;
+    private final String rowNumber;
+    private boolean availability = true;
 
 
     public Cinema(int seatNumber, String rowNumber) {
@@ -11,13 +11,17 @@ public class Cinema {
         this.rowNumber = rowNumber;
     }
 
-
-    public void isFree(boolean available) {
-        isAvailable = available;
+    public void reserveSeat(boolean reserve) {
+        availability = !(reserve);
     }
+
+    static Cinema getSeats(Cinema seats) {
+      return seats;
+    }
+
 
     @Override
     public String toString() {
-        return "seat: {" +  this.seatNumber + " " + this.rowNumber + " is available: "+ this.isAvailable + '}';
+        return "seat: {" +  this.seatNumber + " " + this.rowNumber + " is available: "+ this.availability + '}';
     }
 }

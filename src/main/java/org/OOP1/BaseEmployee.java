@@ -2,17 +2,14 @@ package org.OOP1;
 
 import java.time.LocalDate;
 
-abstract class Employee {
+abstract class BaseEmployee {
     private String position;
     private String name;
     private String surname;
-    private int salary;
     private LocalDate employmentDate;
 
-    public Employee() {
-    }
 
-    public Employee(String position, String name, String surname, LocalDate employmentDate) {
+    public BaseEmployee(String position, String name, String surname, LocalDate employmentDate) {
         this.position = position;
         this.name = name;
         this.surname = surname;
@@ -30,7 +27,7 @@ abstract class Employee {
         return LocalDate.now().compareTo(getEmploymentDate());
     }
 
-    public abstract int getMonthlySalary();
+    public abstract int claculateMonthlySalary();
 
     public abstract int getBaseSalary();
 

@@ -2,14 +2,10 @@ package org.OOP1;
 
 import java.time.LocalDate;
 
-public class Manager extends Employee {
+public class Manager extends BaseEmployee {
     private static int bonus;
-    private int salary;
+    private final int salary = 5000;
 
-    public Manager() {
-        super();
-        this.salary = 5000;
-    }
 
     public Manager(String position, String name, String surname,LocalDate employmentDate) {
         super(position, name, surname, employmentDate);
@@ -25,7 +21,7 @@ public class Manager extends Employee {
     }
 
     @Override
-    public int getMonthlySalary() {
+    public int claculateMonthlySalary() {
         return getBaseSalary() + getBonus();
     }
 

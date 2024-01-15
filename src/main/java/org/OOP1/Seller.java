@@ -2,14 +2,10 @@ package org.OOP1;
 
 import java.time.LocalDate;
 
-public class Seller extends Employee {
+public class Seller extends BaseEmployee {
 
-    private int salary;
+    private final int salary = 3000;
 
-    public Seller() {
-        super();
-        this.salary = 3000;
-    }
 
     public Seller(String position, String name, String surname, LocalDate employmentDate) {
         super(position, name, surname, employmentDate);
@@ -21,7 +17,7 @@ public class Seller extends Employee {
     }
 
      @Override
-    public int getMonthlySalary() {
+    public int claculateMonthlySalary() {
         return getBaseSalary();
     }
 }

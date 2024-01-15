@@ -2,12 +2,13 @@ package org.OOP1;
 
 import java.time.LocalDate;
 
-public class Manager extends Employee {
+public class Manager extends BaseEmployee {
     private static int bonus;
+    private final int salary = 5000;
 
 
-    public Manager(String position, String name, String surname, int salary, LocalDate employmentDate) {
-        super(position, name, surname, salary, employmentDate);
+    public Manager(String position, String name, String surname,LocalDate employmentDate) {
+        super(position, name, surname, employmentDate);
     }
 
     static void setBonus(int salaryBonus) {
@@ -16,15 +17,15 @@ public class Manager extends Employee {
 
     @Override
     public int getBaseSalary() {
-        return getSalary()+2000;
+        return this.salary;
     }
 
     @Override
-    public int getMonthlySalary() {
+    public int claculateMonthlySalary() {
         return getBaseSalary() + getBonus();
     }
 
     private int getBonus() {
-    return bonus;
+        return bonus;
     }
 }

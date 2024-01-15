@@ -9,27 +9,24 @@ abstract class Employee {
     private int salary;
     private LocalDate employmentDate;
 
-    public Employee(String position, String name, String surname, int salary, LocalDate employmentDate) {
+    public Employee() {
+    }
+
+    public Employee(String position, String name, String surname, LocalDate employmentDate) {
         this.position = position;
         this.name = name;
         this.surname = surname;
-        this.salary = salary;
         this.employmentDate =employmentDate;
     }
     protected String introduceEmployee() {
         return "Hello, my name is: " + name + " " + surname + ", I'm a " + position;
     }
 
-
-    protected int getSalary() {
-        return salary;
-    }
-
     protected LocalDate getEmploymentDate() {
         return employmentDate;
     }
 
-    public int getExperience() {
+    protected int getExperience() {
         return LocalDate.now().compareTo(getEmploymentDate());
     }
 

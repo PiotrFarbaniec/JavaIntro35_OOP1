@@ -4,17 +4,24 @@ import java.time.LocalDate;
 
 public class Seller extends Employee {
 
-    public Seller(String position, String name, String surname, int salary, LocalDate employmentDate) {
-        super(position, name, surname, salary, employmentDate);
+    private int salary;
+
+    public Seller() {
+        super();
+        this.salary = 3000;
+    }
+
+    public Seller(String position, String name, String surname, LocalDate employmentDate) {
+        super(position, name, surname, employmentDate);
     }
 
     @Override
     public int getBaseSalary() {
-        return getSalary();
+        return this.salary;
     }
 
      @Override
     public int getMonthlySalary() {
-        return getSalary();
+        return getBaseSalary();
     }
 }

@@ -4,10 +4,15 @@ import java.time.LocalDate;
 
 public class Manager extends Employee {
     private static int bonus;
+    private int salary;
 
+    public Manager() {
+        super();
+        this.salary = 5000;
+    }
 
-    public Manager(String position, String name, String surname, int salary, LocalDate employmentDate) {
-        super(position, name, surname, salary, employmentDate);
+    public Manager(String position, String name, String surname,LocalDate employmentDate) {
+        super(position, name, surname, employmentDate);
     }
 
     static void setBonus(int salaryBonus) {
@@ -16,7 +21,7 @@ public class Manager extends Employee {
 
     @Override
     public int getBaseSalary() {
-        return getSalary()+2000;
+        return this.salary;
     }
 
     @Override
@@ -25,6 +30,6 @@ public class Manager extends Employee {
     }
 
     private int getBonus() {
-    return bonus;
+        return bonus;
     }
 }
